@@ -6,14 +6,36 @@ const candidatos = [
     { id: 5, nombre: "Luis", habilidades: ["C#"], puntaje: 40, estado: "activo" }
 ];
 
-const puntajes = candidatos.filter((candidato) => {
+/* problem 1 */
 
+const resultados = candidatos.filter((candidato) => {
     let candidatosAptos;
 
     if (candidato.puntaje >= 70 && candidato.estado === "activo") {
-        candidatosAptos = candidato.nombre;
+        candidatosAptos = candidato;
         return candidatosAptos;
     } else {
         return false;
     }
 })
+
+/* problem 2 */
+
+const litaCandidatosAptos = resultados.map((resultado) => {
+    const nombre = resultado.nombre;
+    const habilidades = resultado.habilidades.join(", ");
+
+    return {
+        nombre: nombre,
+        resumen: habilidades
+    }
+
+});
+
+/* problem 3 */
+
+const encontrarUsuarios = candidatos.find((candidato) => {
+    return candidato.id === 3;
+});
+
+console.log(encontrarUsuarios);
