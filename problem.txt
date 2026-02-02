@@ -1,0 +1,20 @@
+Misión 1: La Limpieza (.filter)
+El cliente es exigente. Solo quiere ver candidatos que cumplan DOS condiciones al mismo tiempo:
+
+Que su estado sea "activo".
+
+Que su puntaje sea mayor o igual a 70.
+
+Guarda el resultado en una variable llamada candidatosAptos.
+
+
+Misión 2: El Formato (.map)
+Al cliente no le interesa ver todo el objeto (no le importa el ID ni el estado ya filtrado). Quiere una lista simple de presentación. Usando la lista de candidatosAptos (la de la Misión 1), crea un nuevo array que contenga solo objetos con este formato:
+
+{ nombre: "Juan", resumen: "JavaScript, React" }
+
+Pista: Tienes que unir las habilidades en un solo texto (string). Investiga el método .join() para esto.
+
+
+Misión 3: La Búsqueda Urgente (.find)
+El jefe de recursos humanos te grita: "¡Necesito el expediente de Pedro (ID 3) ya mismo para reactivarlo!". Busca en el array original (candidatos) al usuario con el id 3 y guárdalo en una variable.
