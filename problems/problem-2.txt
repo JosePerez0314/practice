@@ -1,0 +1,20 @@
+El Requerimiento (Tu Tarea)
+Necesitamos procesar esta lista para un reporte financiero. Tienes que escribir el código para lograr estos 3 objetivos (tú decides qué método usas para cada paso):
+
+Paso A: Necesitamos una lista que contenga solo a los empleados del departamento de 'IT' que estén actualmente activos.
+
+Paso B: De esa lista filtrada del Paso A, genera un nuevo array que contenga objetos simples con solo dos propiedades: el empleado y su salarioNeto. El salario neto se calcula descontando un 10% de impuestos al salario original.
+
+Ejemplo del formato esperado: { empleado: 'Ana', salarioNeto: 4500 }
+
+Paso C: Usando la lista original (nomina), localiza y extrae el objeto completo del empleado con el id 105 para verificar sus datos.
+
+Documentación Oficial (Tu única ayuda)
+
+MDN Web Docs - Array.prototype.filter()
+
+MDN Web Docs - Array.prototype.map()
+
+MDN Web Docs - Array.prototype.find()
+
+A codear.

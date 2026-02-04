@@ -7,7 +7,6 @@ Que su puntaje sea mayor o igual a 70.
 
 Guarda el resultado en una variable llamada candidatosAptos.
 
-
 Misión 2: El Formato (.map)
 Al cliente no le interesa ver todo el objeto (no le importa el ID ni el estado ya filtrado). Quiere una lista simple de presentación. Usando la lista de candidatosAptos (la de la Misión 1), crea un nuevo array que contenga solo objetos con este formato:
 
