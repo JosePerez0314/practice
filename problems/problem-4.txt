@@ -1,0 +1,57 @@
+El Escenario: La Nómina de Emergencia
+Eres el Backend Lead. El sistema de pagos se rompió y tienes que generar manualmente el archivo de pagos para el banco HOY.
+
+Tienes una lista cruda de empleados. Tu misión es generar dos cosas:
+
+La lista final de transferencias (transferenciasBanco).
+
+Encontrar al empleado que causó el error (sospechoso).
+
+Reglas de Negocio (Léelas con cuidado):
+
+Filtro de Seguridad: Solo se le paga a los empleados del departamento de 'IT' que estén 'activos'. Al resto ignóralos.
+
+Cálculo de Sueldo (Matemática):
+
+Si el empleado es 'Senior', recibe un Bono del 20% sobre su sueldo base.
+
+Si es 'Junior', no recibe bono.
+
+Impuesto: A TODOS (Seniors y Juniors) se les descuenta el 10% del total acumulado (Sueldo + Bono si aplica).
+
+Formato de Salida: El banco es un sistema viejo y solo acepta un array de textos con este formato exacto: "CUENTA: [numeroCuenta] | MONTO: $[totalNeto]"
+
+El Sospechoso: Se sabe que el empleado con id: 666 intentó hackear el sistema. Encuéntralo y guárdalo en una variable aparte.
+
+Data Cruda:
+
+const empleados = [
+    { id: 101, nombre: 'Ana', depto: 'IT', rango: 'Senior', sueldo: 3000, estado: 'activo', cuenta: '111-A' },
+    { id: 102, nombre: 'Beto', depto: 'HR', rango: 'Senior', sueldo: 4000, estado: 'activo', cuenta: '222-B' }, // Depto incorrecto
+    { id: 666, nombre: 'Evil Dev', depto: 'IT', rango: 'Senior', sueldo: 9000, estado: 'inactivo', cuenta: '666-X' }, // Inactivo y Sospechoso
+    { id: 104, nombre: 'Dany', depto: 'IT', rango: 'Junior', sueldo: 1000, estado: 'activo', cuenta: '444-D' },
+    { id: 105, nombre: 'Eli', depto: 'Ventas', rango: 'Junior', sueldo: 1500, estado: 'activo', cuenta: '555-E' },
+    { id: 106, nombre: 'Fabio', depto: 'IT', rango: 'Senior', sueldo: 5000, estado: 'activo', cuenta: '777-F' }
+];
+
+// 1. Genera el array para el banco
+const transferenciasBanco = ...
+
+// 2. Encuentra al culpable
+const sospechoso = ...
+
+console.log(transferenciasBanco);
+console.log(sospechoso);
+
+
+Resultado Esperado en Consola: (Haz los cálculos mentales para ver si te da igual. Pista: Ana es Senior -> 3000 + 20% = 3600. Menos 10% impuesto = 3240)
+
+// transferenciasBanco:
+[
+  "CUENTA: 111-A | MONTO: $3240",
+  "CUENTA: 444-D | MONTO: $900",
+  "CUENTA: 777-F | MONTO: $5400"
+]
+
+// sospechoso:
+{ id: 666, nombre: 'Evil Dev', ... }
