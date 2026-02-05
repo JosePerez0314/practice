@@ -11,7 +11,7 @@ const pagarEmpleados = empleados.filter((e) => {
     return e.depto === "IT" && e.estado === "activo";
 });
 
-const sueldo = pagarEmpleados.map((t) => {
+const transferenciasBanco = pagarEmpleados.map((t) => {
     if (t.rango === "Senior") {
         let bono = t.sueldo + ((t.sueldo * 20) / 100)
         return bono;
@@ -20,10 +20,9 @@ const sueldo = pagarEmpleados.map((t) => {
     } else {
         false;
     }
+
+    return `CUENTA ${t.cuenta} | MONTO: ${t.sueldo} `
 })
 
-const transferenciasBanco = pagarEmpleados.map((s) => {
-    return `CUENTA ${s.cuenta}  ``
-});
 
 console.log(transferenciasBanco)
