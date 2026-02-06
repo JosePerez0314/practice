@@ -7,22 +7,25 @@ const empleados = [
     { id: 106, nombre: 'Fabio', depto: 'IT', rango: 'Senior', sueldo: 5000, estado: 'activo', cuenta: '777-F' }
 ];
 
-const pagarEmpleados = empleados.filter((e) => {
-    return e.depto === "IT" && e.estado === "activo";
-});
+const pagarEmpleados = empleados.filter((e) => e.depto === "IT" && e.estado === "activo");
 
 const transferenciasBanco = pagarEmpleados.map((t) => {
+    let sueldoNeto;
+
     if (t.rango === "Senior") {
         let bono = t.sueldo + ((t.sueldo * 20) / 100)
-        return bono;
-    } else if (t.rango === "Junior") {
-        return t.sueldo;
-    } else {
-        false;
-    }
+        sueldoNeto = (bono * 90) / 100;
+        return `CUENTA ${t.cuenta} | MONTO: ${sueldoNeto} `;
 
-    return `CUENTA ${t.cuenta} | MONTO: ${t.sueldo} `
+    } else if (t.rango === "Junior") {
+        sueldoNeto = (t.sueldo * 90) / 100;
+        return `CUENTA ${t.cuenta} | MONTO: ${sueldoNeto} `;
+
+    } else {
+        return false;
+    }
 })
 
+const sospechoso = empleados.find((e) => e.id === 666);
 
-console.log(transferenciasBanco)
+console.log(sospechoso)
