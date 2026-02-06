@@ -1,0 +1,22 @@
+Los datos vienen "sucios" de un sistema legacy (como suele pasar).
+
+Objetivo: El Dashboard financiero muestra $0.00 y el CEO está gritando. Necesitamos mostrar el Balance Final Real de la empresa basándonos en este JSON.
+
+Tus datos:
+
+JavaScript
+
+const transacciones = [
+    { id: 'tx-01', concepto: 'Venta Licencia', monto: '$1,200.00', tipo: 'ingreso', estado: 'completado' },
+    { id: 'tx-02', concepto: 'Servidor AWS', monto: '$450.50', tipo: 'gasto', estado: 'completado' },
+    { id: 'tx-03', concepto: 'Venta Fallida', monto: '$2,000.00', tipo: 'ingreso', estado: 'rechazado' },
+    { id: 'tx-04', concepto: 'Reembolso Cliente', monto: '$100.00', tipo: 'gasto', estado: 'completado' },
+    { id: 'tx-05', concepto: 'Inversión Angel', monto: '$5,000.00', tipo: 'ingreso', estado: 'pendiente' }, // Pendiente no entra en caja aún
+    { id: 'tx-06', concepto: 'Pago Nómina', monto: '$1,500.00', tipo: 'gasto', estado: 'completado' }
+];
+
+// Tu código aquí abajo. 
+// Variable esperada: balanceFinal (Number)
+Requerimiento del Negocio: Calcula el dinero líquido que realmente tenemos disponible hoy.
+
+Suerte.
