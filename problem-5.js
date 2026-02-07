@@ -7,11 +7,14 @@ const transacciones = [
     { id: 'tx-06', concepto: 'Pago Nómina', monto: '$1,500.00', tipo: 'gasto', estado: 'completado' }
 ];
 
-const estado = transacciones.filter((t) => t.estado === "completado" && t.tipo === "ingreso");
+const estado = transacciones.filter((t) => t.estado === "completado");
 
-const balanceFinal = estado.reduce((a, b) => {
+const dineroGanado = estado.reduce((a, b) => {
     const dinero = b.monto.replace(/,/g, '').slice(1);
-    return dineroTotal = a + parseFloat(dinero);
+    return (a - parseFloat(dinero));
+
+
 }, 0);
 
-console.log(balanceFinal)
+
+console.log(dineroGanado)
