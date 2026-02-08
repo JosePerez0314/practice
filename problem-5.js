@@ -9,12 +9,18 @@ const transacciones = [
 
 const estado = transacciones.filter((t) => t.estado === "completado");
 
-const dineroGanado = estado.reduce((a, b) => {
+const balanceFinal = estado.reduce((a, b) => {
     const dinero = b.monto.replace(/,/g, '').slice(1);
-    return (a - parseFloat(dinero));
+    let dineroTotal;
 
-
+    if (b.id === "tx-01") {
+        dineroTotal = (a + parseFloat(dinero));
+    } else {
+        dineroTotal = (a - parseFloat(dinero));
+    }
+    return dineroTotal
 }, 0);
 
+const dineroTramite = transacciones.find((t) => t.tipo === "ingreso" && t.estado === "pendiente");
 
-console.log(dineroGanado)
+console.log(dineroTramite)
