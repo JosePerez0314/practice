@@ -13,7 +13,7 @@ const balanceFinal = estado.reduce((a, b) => {
     const dinero = b.monto.replace(/,/g, '').slice(1);
     let dineroTotal;
 
-    if (b.id === "tx-01") {
+    if (b.tipo === "ingreso") {
         dineroTotal = (a + parseFloat(dinero));
     } else {
         dineroTotal = (a - parseFloat(dinero));
@@ -23,4 +23,4 @@ const balanceFinal = estado.reduce((a, b) => {
 
 const dineroTramite = transacciones.find((t) => t.tipo === "ingreso" && t.estado === "pendiente");
 
-console.log(dineroTramite)
+console.log(balanceFinal)
