@@ -10,7 +10,7 @@ button.addEventListener("click", async (e) => {
     if (input === "") return;
 
     try {
-        const respuesta = await fetch(``);
+        const respuesta = await fetch(`https://api.jikan.moe/v4/anime?q=${input.value}&limit=10`);
 
     } catch (error) {
 
