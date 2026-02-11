@@ -1,0 +1,53 @@
+/* Variables para facilitar theming y evitar hardcoding */
+:root {
+    --input-border: #dfe1e5;
+    --input-focus: #2196f3;
+    --btn-bg: #2196f3;
+    --btn-hover: #1976d2;
+    --radius: 4px;
+}
+
+.search-box {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-box__input {
+    flex: 1;
+    /* Ocupa el espacio restante */
+    padding: 10px 12px;
+    font-size: 16px;
+    /* Evita zoom automático en iOS */
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    will-change: border-color, box-shadow;
+    /* Optimización de renderizado */
+}
+
+.search-box__input:focus {
+    outline: none;
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+.search-box__btn {
+    padding: 0 24px;
+    background-color: var(--btn-bg);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.search-box__btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.search-box__btn:active {
+    transform: translateY(1px);
+}
