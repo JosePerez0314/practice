@@ -12,8 +12,15 @@ button.addEventListener("click", async (e) => {
     try {
         const respuesta = await fetch(`https://api.jikan.moe/v4/anime?q=${input.value}&limit=10`);
 
-    } catch (error) {
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
 
+        const datos = await respuesta.json();
+
+
+    } catch (error) {
+        console.error("Falló la petición:", error)
     }
 
 });
