@@ -13,7 +13,7 @@ const transferenciasBanco = pagarEmpleados.map((t) => {
     let sueldoNeto;
 
     if (t.rango === "Senior") {
-        let bono = t.sueldo + ((t.sueldo * 20) / 100)
+        let bono = t.sueldo + ((t.sueldo * 20) / 100);
         sueldoNeto = (bono * 90) / 100;
         return `CUENTA ${t.cuenta} | MONTO: ${sueldoNeto} `;
 

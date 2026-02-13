@@ -51,3 +51,79 @@
 .search-box__btn:active {
     transform: translateY(1px);
 }
+
+/* 1. EL CONTENEDOR (La rejilla) */
+#js-results-container {
+    display: grid;
+    /* Esto crea columnas automáticas que miden mínimo 200px y máximo lo que sobre */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    /* Espacio entre tarjetas */
+    padding: 20px;
+}
+
+/* 2. LA TARJETA (El marco) */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    overflow: hidden;
+    /* Para que la imagen no se salga de las esquinas redondas */
+    transition: transform 0.2s ease;
+    /* Animación suave al pasar el mouse */
+    display: flex;
+    flex-direction: column;
+    /* Para empujar el botón abajo si el título es largo */
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+    transform: translateY(-5px);
+    /* Se levanta un poco */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 3. LA IMAGEN (El truco del Senior) */
+.card img {
+    width: 100%;
+    height: 280px;
+    /* Altura fija para que todas sean iguales */
+    object-fit: cover;
+    /* ¡CRUCIAL! Corta la imagen para que no se deforme/estire */
+}
+
+/* 4. EL TEXTO */
+.card h3 {
+    font-size: 1.1rem;
+    margin: 10px;
+    color: #333;
+    /* Truco para cortar títulos muy largos con "..." */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 10px 10px;
+}
+
+/* 5. EL BOTÓN/ENLACE */
+.card a {
+    display: block;
+    text-align: center;
+    background-color: #007bff;
+    /* Azul estándar */
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: auto;
+    /* Empuja el botón al final de la tarjeta */
+    font-weight: bold;
+}
+
+.card a:hover {
+    background-color: #0056b3;
+}
