@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de videojuegos</title>
+</head>
+
+<body>
+
+    <form class="search-box" role="search" aria-label="Búsqueda del sitio">
+        <input type="search" id="input" class="search-box__input" name="q" placeholder="Buscar..."
+            aria-label="Buscar contenido" required>
+        <button type="submit" id="button" class="search-box__btn">
+            Buscar
+        </button>
+    </form>
+
+    <div class="results-container" id="js-results-container" aria-live="polite"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
