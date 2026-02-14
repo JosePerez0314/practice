@@ -26,7 +26,7 @@ button.addEventListener("click", async (e) => {
     if (inputValue === "") return;
 
     try {
-        const res = await fetch(`http://www.omdbapi.com/?apikey=8b15048&s=${input.value}&limit=10`);
+        const res = await fetch(`http://www.omdbapi.com/?apikey=8b15048&s=${input.value}`);
 
 
 
