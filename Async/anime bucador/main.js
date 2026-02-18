@@ -23,17 +23,17 @@ button.addEventListener("click", async (e) => {
     e.preventDefault();
 
     const inputValue = input.value;
-    if (input === "") return;
+    if (inputValue === "") return;
 
     try {
-        const respuesta = await fetch(`https://api.jikan.moe/v4/anime?q=${input.value}&limit=10`);
+        const respuesta = await fetch(`https://api.jikan.moe/v4/anime?q=${inputValue}&limit=10`);
 
         if (!respuesta.ok) {
             throw new Error(`Error HTTP: ${respuesta.status}`);
         }
 
-        const datos = await respuesta.json();
-        const animes = datos.data;
+        const jsonDatos = await respuesta.json();
+        const animes = jsonDatos.data;
 
         return animeCards(animes);
 
