@@ -21,6 +21,8 @@ const balanceFinal = estado.reduce((a, b) => {
     return dineroTotal
 }, 0);
 
+// Codigo Extra
+
 const dineroTramite = transacciones.find((t) => t.tipo === "ingreso" && t.estado === "pendiente");
 
 console.log(balanceFinal)
